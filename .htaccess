@@ -1,0 +1,9 @@
+# La carpeta cuelga de un WordPress: no heredar sus reglas de reescritura
+RewriteEngine Off
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+<IfModule mod_headers.c>
+  <FilesMatch "^_next/static/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
